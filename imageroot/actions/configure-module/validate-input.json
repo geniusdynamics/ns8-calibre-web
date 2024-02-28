@@ -1,11 +1,11 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Configure kickstart",
-    "$id": "http://nethserver.org/json-schema/task/input/kickstart/configure-module",
-    "description": "Configure kickstart",
+    "title": "Configure calibre",
+    "$id": "http://nethserver.org/json-schema/task/input/calibre/configure-module",
+    "description": "Configure calibre",
     "examples": [
         {
-            "host": "kickstart.domain.org",
+            "host": "calibre.domain.org",
             "http2https": true,
             "lets_encrypt": true
         }
