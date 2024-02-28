@@ -46,6 +46,11 @@ You can retrieve the configuration with
 api-cli run get-configuration --agent module/calibre1
 ```
 
+Default Admin Login:
+Username: admin
+Password: admin123
+
+
 ## Uninstall
 
 To uninstall the instance:
