@@ -13,22 +13,22 @@ images=()
 # The image will be pushed to GitHub container registry
 repobase="${REPOBASE:-ghcr.io/geniusdynamics}"
 # Configure the image name
-reponame="calibre"
+reponame="calibre-web"
 
 # Create a new empty container image
 container=$(buildah from scratch)
 
-# Reuse existing nodebuilder-calibre container, to speed up builds
-if ! buildah containers --format "{{.ContainerName}}" | grep -q nodebuilder-calibre; then
+# Reuse existing nodebuilder-calibre-web container, to speed up builds
+if ! buildah containers --format "{{.ContainerName}}" | grep -q nodebuilder-calibre-web; then
     echo "Pulling NodeJS runtime..."
-    buildah from --name nodebuilder-calibre -v "${PWD}:/usr/src:Z" docker.io/library/node:lts
+    buildah from --name nodebuilder-calibre-web -v "${PWD}:/usr/src:Z" docker.io/library/node:lts
 fi
 
 echo "Build static UI files with node..."
 buildah run \
     --workingdir=/usr/src/ui \
     --env="NODE_OPTIONS=--openssl-legacy-provider" \
-    nodebuilder-calibre \
+    nodebuilder-calibre-web \
     sh -c "yarn install && yarn build"
 
 # Add imageroot directory to the container image
