@@ -6,7 +6,7 @@ TCalibre Web App for Nethserer 8
 
 Instantiate the module with:
 
-    add-module ghcr.io/geniusdynamics/calibre:latest 1
+    add-module ghcr.io/geniusdynamics/calibre-web:latest 1
 
 The output of the command will return the instance name.
 Output example:
