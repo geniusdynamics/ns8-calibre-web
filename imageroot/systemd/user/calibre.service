@@ -22,7 +22,7 @@ ExecStartPre=/bin/rm -f %t/calibre.pid %t/calibre.pod-id
 ExecStartPre=/usr/bin/podman pod create --infra-conmon-pidfile %t/calibre.pid \
     --pod-id-file %t/calibre.pod-id \
     --name calibre \
-    --publish 127.0.0.1:${TCP_PORT}:8083 \
+    --publish 127.0.0.1:${TCP_PORT}:8080 \
     --replace
 ExecStart=/usr/bin/podman pod start --pod-id-file %t/calibre.pod-id
 ExecStop=/usr/bin/podman pod stop --ignore --pod-id-file %t/calibre.pod-id -t 10
