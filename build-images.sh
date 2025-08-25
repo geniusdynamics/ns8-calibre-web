@@ -14,7 +14,7 @@ images=()
 repobase="${REPOBASE:-ghcr.io/geniusdynamics}"
 # Configure the image name
 reponame="calibre-web"
-calibre_version="0.6.24"
+calibre_version="0.6.25"
 
 # Create a new empty container image
 container=$(buildah from scratch)
