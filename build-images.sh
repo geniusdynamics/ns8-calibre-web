@@ -49,7 +49,8 @@ buildah config --entrypoint=/ \
     --label="org.nethserver.authorizations=traefik@node:routeadm" \
     --label="org.nethserver.tcp-ports-demand=1" \
     --label="org.nethserver.rootfull=0" \
-    --label="org.nethserver.images=lscr.io/linuxserver/calibre:latest" \
+    --label="org.nethserver.min-core=3.0.0" \
+    --label="org.nethserver.images=lscr.io/linuxserver/calibre:9.18.0" \
     "${container}"
 # Commit the image
 buildah commit "${container}" "${repobase}/${reponame}"
