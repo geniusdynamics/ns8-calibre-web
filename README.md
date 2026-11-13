@@ -1,6 +1,6 @@
 # ns8-calibre
 
-TCalibre Web App for Nethserer 8
+Calibre App for Nethserver 8
 
 ## Install
 
