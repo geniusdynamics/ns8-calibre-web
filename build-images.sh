@@ -17,6 +17,8 @@ reponame="calibre-web"
 # Node.js 25+ no longer ships Corepack, install it from npm
 # renovate: datasource=npm packageName=corepack
 corepack_version=0.36.0
+# renovate: datasource=docker packageName=lscr.io/linuxserver/calibre-web
+calibre_version=0.6.25
 
 # Create a new empty container image
 container=$(buildah from scratch)
@@ -50,7 +52,7 @@ buildah config --entrypoint=/ \
     --label="org.nethserver.tcp-ports-demand=1" \
     --label="org.nethserver.rootfull=0" \
     --label="org.nethserver.min-core=3.0.0" \
-    --label="org.nethserver.images=lscr.io/linuxserver/calibre:9.18.0" \
+    --label="org.nethserver.images=lscr.io/linuxserver/calibre-web:${calibre_version}" \
     "${container}"
 # Commit the image
 buildah commit "${container}" "${repobase}/${reponame}"
