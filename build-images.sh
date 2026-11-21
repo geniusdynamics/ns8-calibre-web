@@ -26,7 +26,7 @@ container=$(buildah from scratch)
 # Reuse existing nodebuilder-calibre-web container, to speed up builds
 if ! buildah containers --format "{{.ContainerName}}" | grep -q nodebuilder-calibre-web; then
     echo "Pulling NodeJS runtime..."
-    buildah from --name nodebuilder-calibre-web -v "${PWD}:/usr/src:Z" docker.io/library/node:26.13.0-slim
+    buildah from --name nodebuilder-calibre-web -v "${PWD}:/usr/src:Z" docker.io/library/node:26.13.1-slim
     buildah run nodebuilder-calibre-web sh -c "npm install -g corepack@${corepack_version} && corepack enable"
 fi
 
